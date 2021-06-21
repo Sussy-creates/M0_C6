@@ -30,11 +30,7 @@ def get_input():
 
 def process_input(username, status):
     """Processes input for security sytem, which will either check a user in or out, or sound the alarm"""
-    if username not in users:
-        print('  ALARM SOUNDED')
-    elif status not in ['in', 'out']:
-        print('  ALARM SOUNDED')
-    elif users[username] == status:
+    if username not in users or status not in ['in', 'out'] or users[username] == status:
         print('  ALARM SOUNDED')
     else:
         users[username] = status
